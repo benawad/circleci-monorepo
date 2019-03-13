@@ -1,0 +1,32 @@
+{
+  "name": "circleci-node",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "devDependencies": {
+    "@types/ioredis": "^4.0.10",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.2",
+    "cross-env": "^5.2.0",
+    "jest": "^24.5.0",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {
+    "ioredis": "^4.6.2",
+    "pg": "^7.3.0",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "0.2.15-rc.2"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "cross-env NODE_ENV=test jest",
+    "docker:build": "docker build -t benawad/example:latest .",
+    "docker:login": "docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD",
+    "docker:push": "docker push benawad/example:latest",
+    "ci:docker": "npm run docker:build && npm run docker:login && npm run docker:push",
+    "ci:test": "cross-env NODE_ENV=test jest --ci --runInBand --detectOpenHandles --forceExit",
+    "ci:deploy": "npm run ci:docker"
+  }
+}

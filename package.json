@@ -1,0 +1,18 @@
+{
+  "name": "circleci-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "lerna": "^3.13.1"
+  },
+  "scripts": {
+    "ci:test": "lerna run ci:test",
+    "ci:deploy": "lerna run ci:deploy",
+    "new-version": "lerna version --conventional-commits --yes"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
