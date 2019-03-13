@@ -26,6 +26,7 @@ jobs:
 
       # - run: yarn install --freeze-lockfile
       - run: npm i
+      - run: npx lerna bootstrap
 
       - save_cache:
           paths:
