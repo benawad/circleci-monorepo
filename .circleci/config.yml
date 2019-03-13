@@ -24,9 +24,9 @@ jobs:
             - yarn-packages-v1-{{ .Branch }}-
             - yarn-packages-v1-
 
-      # - run: yarn install --freeze-lockfile
-      - run: npm i
-      - run: npx lerna bootstrap
+      - run: yarn install --freeze-lockfile
+      # - run: npm i
+      # - run: npx lerna bootstrap
 
       - save_cache:
           paths:
