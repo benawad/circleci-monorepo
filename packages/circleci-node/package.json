@@ -28,5 +28,11 @@
     "ci:docker": "npm run docker:build && npm run docker:login && npm run docker:push",
     "ci:test": "cross-env NODE_ENV=test jest --ci --runInBand --detectOpenHandles --forceExit",
     "ci:deploy": "npm run ci:docker"
+  },
+  "workspaces": {
+    "nohoist": [
+      "typeorm",
+      "typeorm/**"
+    ]
   }
 }
