@@ -9,10 +9,5 @@
     "ci:test": "lerna run ci:test",
     "ci:deploy": "lerna run ci:deploy",
     "new-version": "lerna version --conventional-commits --yes"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
   }
 }
