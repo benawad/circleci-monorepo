@@ -37,8 +37,6 @@ jobs:
       - run: git config --global user.email $GITHUB_EMAIL
       - run: git config --global user.name $GITHUB_USER
 
-      - run: echo 'export LAST_TAG=`git describe --tags $(git rev-list --tags --max-count=1)`' >> $BASH_ENV
-      - run: echo $LAST_TAG
       - run: yarn new-version
 
       - setup_remote_docker:
@@ -53,7 +51,6 @@ jobs:
             tar -xz -C /tmp -f /tmp/docker-$VER.tgz
             mv /tmp/docker/* /usr/bin
 
-      - run:
-          command: yarn ci:deploy
-          environment:
-            TAG: git describe --tags (git rev-list --tags --max-count=2) | sed -n 2p
+      - run: echo 'export TAG=`git describe --abbrev=0 --tags (git rev-list --tags --max-count=2) | sed -n 2p`' >> $BASH_ENV
+      - run: echo $TAG
+      - run: yarn ci:deploy
