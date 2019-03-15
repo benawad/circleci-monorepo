@@ -7,7 +7,7 @@
   },
   "scripts": {
     "ci:test": "lerna run ci:test",
-    "ci:deploy": "lerna run ci:deploy --since $LAST_TAG",
+    "ci:deploy": "echo $LAST_TAG && lerna run ci:deploy --since $LAST_TAG",
     "new-version": "lerna version --conventional-commits --yes"
   },
   "workspaces": {
