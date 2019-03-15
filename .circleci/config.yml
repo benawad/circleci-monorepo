@@ -39,7 +39,7 @@ jobs:
 
       - run: git describe
       - run: git describe --tags $(git rev-list --tags --max-count=1)
-      - run: LAST_TAG=`git describe --tags $(git rev-list --tags --max-count=1)`
+      - run: export LAST_TAG=`git describe --tags $(git rev-list --tags --max-count=1)`
       - run: echo $LAST_TAG
       - run: yarn new-version
 
