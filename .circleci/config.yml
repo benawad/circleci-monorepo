@@ -54,3 +54,5 @@ jobs:
             mv /tmp/docker/* /usr/bin
 
       - run: yarn ci:deploy
+          environment:
+            TAG: git describe --abbrev=0 --tags (git rev-list --tags --max-count=2) | sed -n 2p
