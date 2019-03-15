@@ -56,4 +56,4 @@ jobs:
       - run:
           command: yarn ci:deploy
           environment:
-            TAG: git describe --abbrev=0 --tags (git rev-list --tags --max-count=2) | sed -n 2p
+            TAG: git describe --tags (git rev-list --tags --max-count=2) | sed -n 2p
