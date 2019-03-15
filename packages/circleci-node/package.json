@@ -1,7 +1,7 @@
 {
   "name": "circleci-node",
   "private": true,
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Awesome project developed with TypeORM.",
   "devDependencies": {
     "@types/ioredis": "^4.0.10",
