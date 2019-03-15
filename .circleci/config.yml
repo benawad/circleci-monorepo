@@ -37,7 +37,9 @@ jobs:
       - run: git config --global user.email $GITHUB_EMAIL
       - run: git config --global user.name $GITHUB_USER
 
-      - run: LAST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+      - run: git describe
+      - run: git describe --tags $(git rev-list --tags --max-count=1)
+      - run: LAST_TAG=`git describe --tags $(git rev-list --tags --max-count=1)`
       - run: echo $LAST_TAG
       - run: yarn new-version
 
