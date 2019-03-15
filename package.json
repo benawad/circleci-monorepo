@@ -7,7 +7,7 @@
   },
   "scripts": {
     "ci:test": "lerna run ci:test",
-    "ci:deploy": "lerna run ci:deploy --since",
+    "ci:deploy": "lerna run ci:deploy --since HEAD~1",
     "new-version": "lerna version --conventional-commits --yes"
   },
   "workspaces": {
