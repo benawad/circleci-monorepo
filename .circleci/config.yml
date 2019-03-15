@@ -54,4 +54,5 @@ jobs:
       - run: git tag
       - run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p`' >> $BASH_ENV
       - run: echo $TAG
+      - run: npx lerna ls --since $TAG
       - run: yarn ci:deploy
