@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import logo from './logo.svg';
+import React, { Component } from "react";
+import "./App.css";
+import logo from "./logo.svg";
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn react
+            Learn React
           </a>
         </header>
       </div>
